@@ -10,3 +10,8 @@ before_install:
   - gcloud components update kubectl
   # auth to gcloud
   - gcloud auth activate-service-account --key-file service-account.json
+  # select project and zone
+  - gcloud config set project multi-k8s-270020
+  - gcloud config set compute/zone us-central1-c
+  # work with this cluster
+  - gcloud container clusters get-credentials multi-cluster
